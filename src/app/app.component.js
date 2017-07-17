@@ -12,20 +12,14 @@ var AppComponent = (function () {
         this.street = '1385 S Claiborne Ave';
         this.city = 'Gilbert';
         this.region = 'Southwest';
-        this.hideAddress = true;
+        this.hideAddress = false;
     }
-    AppComponent.prototype.addressClick = function () {
-        this.hideAddress = !this.hideAddress;
-    };
-    AppComponent.prototype.regionChange = function (region) {
-        this.region = region;
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n  \t<h1>{{name}}</h1>\n  \t<p> {{name}} is in the {{region}} region. </p>\n  \t<br/>\n\n  \t<input [value]=\"name\" (input)=\"name=$event.target.value\"><br/>\n\n  \t<input [value]=\"name\" (keyup.enter)=\"name=$event.target.value\"\n  \t\t\t\t\t\t\t\t\t\t\t\t(blur)=\"name=$event.target.value\"><br/>\n\n  \t<button (click)=\"addressClick()\">Show/Hide Address</button>\n  \t<div [hidden]=\"hideAddress\">\n  \t\t<fieldset>\n  \t\t\t<label>Street: </label>{{street}}\n  \t\t</fieldset>\n\n  \t\t<fieldset>\n  \t\t\t<label>City: </label>{{city}}\n  \t\t</fieldset>\n\n  \t\t<fieldset>\n  \t\t\t<label>Region:</label>\n  \t\t\t<select (change)=\"regionChange($event.target.value)\">\n  \t\t\t\t<option>Northwest</option>\n  \t\t\t\t<option>Southwest</option>\n  \t\t\t\t<option>Southeast</option>\n  \t\t\t\t<option>Northeast</option>\n  \t\t\t</select>\n  \t\t</fieldset>\n  \t</div>\n  \t\n  ",
+        template: "\n  \t<h1>{{name}}</h1>\n\n  \t<p> {{name}} is at {{street}} in {{city}} in the {{region}} region. </p>\n  \t<br/>\n\n  \t<fieldset>\n  \t\t<label>Name: <input [(ngModel)]=\"name\"></label>\n  \t</fieldset>\n\n  \t<label><input type=\"checkbox\" [(ngModel)]=\"hideAddress\"> Hide Address</label>\n\n  \t<div [hidden]=\"hideAddress\">\n  \t\t<fieldset>\n  \t\t\t<label>Street: <input [(ngModel)]=\"street\"></label>\n  \t\t</fieldset>\n\n  \t\t<fieldset>\n  \t\t\t<label>City: <input [(ngModel)]=\"city\"></label>\n  \t\t</fieldset>\n\n  \t\t<fieldset>\n  \t\t\t<label>Region:</label>\n  \t\t\t<select [(ngModel)]=\"region\">\n  \t\t\t\t<option>Northwest</option>\n  \t\t\t\t<option>Southwest</option>\n  \t\t\t\t<option>Southeast</option>\n  \t\t\t\t<option>Northeast</option>\n  \t\t\t</select>\n  \t\t</fieldset>\n  \t</div>\n  \t\n  ",
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
