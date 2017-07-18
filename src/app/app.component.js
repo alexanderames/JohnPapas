@@ -8,18 +8,60 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'Alexander Ames';
-        this.street = '1385 S Claiborne Ave';
-        this.city = 'Gilbert';
-        this.region = 'Southwest';
+        this.regions = ['East', 'Midwest', 'North', 'South', 'West'];
+        this.customers = [
+            {
+                id: 1,
+                name: 'Alex Smith',
+                address: {
+                    street: '123 Main Street',
+                    city: 'Anytown',
+                    state: 'California',
+                    region: 'West'
+                }
+            },
+            {
+                id: 2,
+                name: 'Pierre Pasmal',
+                address: {
+                    street: '456 Rue de Main',
+                    city: 'Quebec City',
+                    state: 'Quebec',
+                    region: 'East'
+                }
+            },
+            {
+                id: 3,
+                name: 'Margarita Nadie',
+                address: {
+                    street: '789 Calle Principal',
+                    city: 'Guadalajara',
+                    state: 'Jalisco',
+                    region: 'South'
+                }
+            },
+            {
+                id: 4,
+                name: 'Katie O\'Leary',
+                address: {
+                    street: '137 DeKoven Street',
+                    city: 'Chicago',
+                    state: 'Illinois',
+                    region: 'Midwest'
+                }
+            },
+        ];
+        this.customer = this.customers[0];
         this.hideAddress = false;
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'my-app',
-        template: "\n  \t<h1>{{name}}</h1>\n\n  \t<p> {{name}} is at {{street}} in {{city}} in the {{region}} region. </p>\n  \t<br/>\n\n  \t<fieldset>\n  \t\t<label>Name: <input [(ngModel)]=\"name\"></label>\n  \t</fieldset>\n\n  \t<label><input type=\"checkbox\" [(ngModel)]=\"hideAddress\"> Hide Address</label>\n\n  \t<div [hidden]=\"hideAddress\">\n  \t\t<fieldset>\n  \t\t\t<label>Street: <input [(ngModel)]=\"street\"></label>\n  \t\t</fieldset>\n\n  \t\t<fieldset>\n  \t\t\t<label>City: <input [(ngModel)]=\"city\"></label>\n  \t\t</fieldset>\n\n  \t\t<fieldset>\n  \t\t\t<label>Region:</label>\n  \t\t\t<select [(ngModel)]=\"region\">\n  \t\t\t\t<option>Northwest</option>\n  \t\t\t\t<option>Southwest</option>\n  \t\t\t\t<option>Southeast</option>\n  \t\t\t\t<option>Northeast</option>\n  \t\t\t</select>\n  \t\t</fieldset>\n  \t</div>\n  \t\n  ",
+        templateUrl: 'app.component.html',
+        styleUrls: ['app.component.css']
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
