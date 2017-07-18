@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.regions = ['East', 'Midwest', 'North', 'South', 'West'];
+        this.states = ['California', 'Jalisco', 'Quebec', 'Illinois'];
         this.customers = [
             {
                 id: 1,
@@ -51,8 +52,7 @@ var AppComponent = (function () {
                 }
             },
         ];
-        this.customer = this.customers[0];
-        this.hideAddress = false;
+        this.showAddress = false;
     }
     return AppComponent;
 }());
